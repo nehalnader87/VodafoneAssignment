@@ -38,11 +38,9 @@ public class FilterPage extends Pagebase {
 		return title;
 	}
 	
-	public String ClickVideo(int index)
+	public void ClickVideo(int index)
 	{
 		clickButton(Videos.get(index));
-		String PageURL = Videos.get(index).getAttribute("href");
-		return PageURL;
 	}
 
 }

@@ -20,7 +20,7 @@ public class SearchVideos extends Testbase
 	HomePage  HPObject;
 	FilterPage  FPObject;
 	VideoPage  VPObject;
-	
+
 	CSVReader reader;
 	
 	
@@ -38,15 +38,12 @@ public class SearchVideos extends Testbase
 			FPObject= new FilterPage(driver);
 			FPObject.FilterByVideo();
 			String ActualTitle = FPObject.getVideoTitlebyindex(2);
-			String Url= FPObject.ClickVideo(2);
+			FPObject.ClickVideo(2);
 			VPObject= new VideoPage(driver);
-			System.out.println(driver.getCurrentUrl());
-			System.out.println(driver.getTitle());
-			System.out.println(Url);
-			//String  ExpectedTitle= VPObject.getVideoTitle();
-			System.out.println(ActualTitle);
-			//System.out.println(ExpectedTitle);
-			//Assert.assertEquals(ActualTitle, ExpectedTitle);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			String  ExpectedTitle= VPObject.getVideoTitle();
+			System.out.println(ExpectedTitle);
+			Assert.assertEquals(ActualTitle, ExpectedTitle);
 		}
 	}
 	
@@ -58,14 +55,11 @@ public class SearchVideos extends Testbase
 			FPObject= new FilterPage(driver);
 			FPObject.FilterByVideo();
 			String ActualTitle = FPObject.getVideoTitlebyindex(9);
-			String Url= FPObject.ClickVideo(9);
+			FPObject.ClickVideo(9);
 			VPObject= new VideoPage(driver);
-			System.out.println(driver.getCurrentUrl());
-			System.out.println(driver.getTitle());
-			System.out.println(Url);
-			//String  ExpectedTitle= VPObject.getVideoTitle();
-			System.out.println(ActualTitle);
-			//System.out.println(ExpectedTitle);
-			//Assert.assertEquals(ActualTitle, ExpectedTitle);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			String  ExpectedTitle= VPObject.getVideoTitle();
+			System.out.println(ExpectedTitle);
+			Assert.assertEquals(ActualTitle, ExpectedTitle);
 	}
 }
