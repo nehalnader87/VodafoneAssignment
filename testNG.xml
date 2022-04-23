@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="Assignment Suite">
+	<parameter name="browser" value="chrome" />
+  <test name="Test" parallel = "Tests" thread-count = "2">
+    <classes>
+      <class name="Tests.SearchVideos"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
